@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Timetable Management System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="timetable.css">
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <h1>⬡ Timetable Management System</h1>
+    <p>9 SECTIONS · 16 TEACHERS · 9 SUBJECTS · 5 DAYS · 6 PERIODS</p>
+  </div>
+  <div class="header-controls">
+    <div class="tab-group">
+      <button class="tab-btn active" onclick="switchView('section')">Section View</button>
+      <button class="tab-btn" onclick="switchView('teacher')">Teachers</button>
+      <button class="tab-btn" onclick="switchView('summary')">Summary</button>
+    </div>
+
+    <select id="sectionSelect" onchange="switchSection(this.value)">
+      <option value="A">Section A</option>
+      <option value="B">Section B</option>
+      <option value="C">Section C</option>
+      <option value="D">Section D</option>
+      <option value="E">Section E</option>
+      <option value="F">Section F</option>
+      <option value="G">Section G</option>
+      <option value="H">Section H</option>
+      <option value="I">Section I</option>
+    </select>
+
+    <select id="teacherSelect" style="display:none" onchange="switchTeacher(this.value)">
+      <option value="T01">T01 · Prof.Chamanthi.S </option>
+      <option value="T02">T02 · Prof. SowmyaShree</option>
+      <option value="T03">T03 · Prof. Sridevi</option>
+      <option value="T04">T04 · Prof. Manjunath</option>
+      <option value="T05">T05 · Prof. Suresh</option>
+      <option value="T06">T06 · Prof. Madhu</option>
+      <option value="T07">T07 · Prof. Lokesh</option>
+      <option value="T08">T08 · Prof. Bharath</option>
+      <option value="T09">T09 · Prof. Ranjana Thakuria</option>
+      <option value="T10">T10 · Prof. Nazarath</option>
+      <option value="T11">T11 · Prof. Padmavathi </option>
+      <option value="T12">T12 · Prof. Sathyasheelan</option>
+      <option value="T13">T13 · Prof. Kavitha</option>
+      <option value="T14">T14 · Prof. Latha</option>
+      <option value="T15">T15 · Mr. Arjun </option>
+      <option value="T16">T16 · Ms. Sneha </option>
+    </select>
+  </div>
+</header>
+
+<div class="legend-bar">
+  <span class="legend-label">LEGEND:</span>
+  <div class="legend-item"><div class="legend-dot" style="background:#a99ffe"></div>Maths</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#f7b26a"></div>OS</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#6af7c8"></div>DDCO</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#f76a8a"></div>DS</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#6ac8f7"></div>C++</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#c8f76a"></div>DBMS</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#f76af7"></div>MC</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#f7f76a"></div>ADA</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#6af7c8;opacity:.5;border:1px dashed #6af7c8"></div>Library</div>
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(247,178,106,0.4);border:1px solid #f7b26a"></div>LAB (2-period)</div>
+</div>
+
+<main id="main">
+
+  <div class="section-view active" id="view-section">
+    <div id="sectionContent"></div>
+  </div>
+
+  <div class="teacher-view" id="view-teacher">
+    <div id="teacherContent"></div>
+  </div>
+
+  <div class="summary-view" id="view-summary">
+    <div id="summaryContent"></div>
+  </div>
+
+</main>
+
+<script src="timetable.js"></script>
+</body>
+</html>
